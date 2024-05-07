@@ -12,7 +12,8 @@ setup(
     install_requires=[
         'yfinance',
         'rich',
-        'argparse'
+        'argparse',
+        'pandas'
     ],
     author='Nexusrev',
     author_email='nramirez@arkadiaanalytics.com',

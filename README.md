@@ -1,64 +1,59 @@
-Here's a structured `README.md` for your MarketVisor project, designed to give users and contributors a comprehensive overview of the tool:
+### README.md for MarketVisor
 
 ```markdown
 # MarketVisor
 
-MarketVisor is a command-line interface (CLI) tool that provides quick and easy access to real-time and historical stock market data using the Yahoo Finance API. Designed with simplicity and efficiency in mind, MarketVisor is perfect for individual investors, financial analysts, and developers looking for an open-source tool to integrate stock data into their projects.
-
-## Features
-
-- **Real-Time Data**: Fetch the latest stock market data with a simple command.
-- **Historical Data**: Retrieve historical data for a specific date or range.
-- **Data Visualization**: Basic data outputs in a clean, readable format using the rich Python library.
-- **Open Source**: Modify, distribute, and use the software freely in your projects.
+## About
+MarketVisor is an open-source Command-Line Interface (CLI) tool that provides rapid, real-time financial data analytics with seamless operating system integration. Designed for continuous updates and community-driven enhancements, MarketVisor aims to revolutionize the accessibility and utility of financial market data for personal and professional use.
 
 ## Installation
 
-To install MarketVisor, ensure you have Python installed on your system and then run the following command:
+### Prerequisites
+- Docker installed on your machine. To install Docker, visit [Docker's official installation guide](https://docs.docker.com/get-docker/).
+
+### Pulling the Docker Image
+To get started quickly, you can pull the pre-built Docker image from Docker Hub:
 
 ```bash
-pip install marketvisor
+docker pull nexusrev/marketvisor:latest
+```
+
+### Building the Docker Image Locally
+Alternatively, you can build the Docker image yourself from the source:
+
+```bash
+git clone https://github.com/nexusrev/marketvisor.git
+cd marketvisor
+docker build -t marketvisor .
 ```
 
 ## Usage
 
-Here's how you can use MarketVisor to fetch stock data:
+To run MarketVisor, use the following command:
 
 ```bash
-marketvisor -s AAPL
+docker run -it --rm yourdockerhubusername/marketvisor -s SYMBOL -p PERIOD -i INTERVAL -w WINDOW
 ```
 
-### Commands
+### Parameters
+- `-s`, `--symbol`: The stock symbol to fetch data for (e.g., AAPL for Apple Inc.).
+- `-p`, `--period`: The time period for fetching data (e.g., 1mo, 3mo, 6mo).
+- `-i`, `--interval`: The interval between data points (e.g., 1d for daily).
+- `-w`, `--window`: The window size for the Simple Moving Average calculation.
 
-- `-s, --symbol`: Specify the stock symbol (e.g., `AAPL` for Apple Inc.)
-- `-d, --date`: Specify the date for historical data in YYYY-MM-DD format (optional).
+### Example
+Here's an example command to fetch data for Apple Inc. over a one-month period with daily intervals and a 20-day SMA:
+
+```bash
+docker run -it --rm yourdockerhubusername/marketvisor -s AAPL -p 1mo -i 1d -w 20
+```
 
 ## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-### How to Contribute
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+We welcome contributions from the community! Whether it's a bug fix, a new feature, or an improvement to our documentation, please feel free to contribute. Check out our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started.
 
 ## License
+MarketVisor is made available under the MIT License. For more details, see the [LICENSE](LICENSE.md) file in the repository.
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Your Name - [nramirez@arkadiaanalytics.com](mailto:nramirez@arkadiaanalytics.com)  
-Project Link: [https://github.com/Nexusrev/marketvisor](https://github.com/Nexusrev/marketvisor)
-
-## Acknowledgments
-
-- Yahoo Finance API
-- Python `rich` library
-- And all our contributors who have helped this project grow.
+## Support
+For support, please open an issue on our [GitHub issues page](https://github.com/nexusrev/marketvisor/issues).
 ```
-
-This README provides a clear introduction, concise instructions for installation and usage, a call to action for contributions, and proper acknowledgments. It can be placed in the root directory of your GitHub repository to serve as the primary documentation for anyone visiting your project page. Adjust any section to better fit your project specifics or personal preferences!
