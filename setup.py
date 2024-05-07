@@ -14,8 +14,8 @@ setup(
         'rich',
         'argparse'
     ],
-    author='Your Name',
-    author_email='your.email@example.com',
+    author='Nexusrev',
+    author_email='nramirez@arkadiaanalytics.com',
     description='A simple CLI tool to fetch and display stock data using yfinance.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
